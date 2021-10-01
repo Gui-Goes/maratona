@@ -8,27 +8,39 @@
 </head>
 <body>
     Insira seu nome: <br> 
-    <input type="text">
+    <input type="text" id="inp_nome">
     <br><br>
     Insira seu número da sorte: <br>
     <input id="ipt_numero" type="text" placeholder="entre 1 e 10">
     <br><br>
-    <button onclick="sortear()">Sortear</button>
+    <button onclick="sortear()">Sortear</button> <br><br>
+
+    <span id="span_text"></span>
     
     
 
 </body>
 </html>
 <script>
+    var contagem = 0;
     function sortear(){
         var random = Math.random();
         var sorte = ipt_numero.value;
-        if(sorte >=1 && sorte <=10){
-            
-        }else{
+        var Nrandom = random * 10;
+        contagem++;
+
+        if(sorte <1 && sorte >10){
             alert('Você escolheu um número errado')
-        }
+        }/*else{
+            alert('Você escolheu um número errado')
+        }*/
     }
+
+    if(sorte == Nrandom.toFixed()){
+        span_text.innerHTML = `Parabéns, ${inp_nome.value} você foi sorteado(a) após ${contagem} sorteios!`
+    }
+
+    console.log(Nrandom)
 
 
 
